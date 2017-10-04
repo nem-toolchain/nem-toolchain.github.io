@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Nem-toolchain | Command line toolchain for NEM blockchain</title>
+    <link rel="stylesheet" href="theme/apex/css/index.css"/>
+  </head>
+  <body>
+    <div class="Wrapper">
+      <div class="Container">
+        <div class="Header">
+          <div class="Title center">
+            <span class="text">Nem-toolchain</span>
+            <span class="subtext">Command line toolchain for NEM blockchain</span>
+          </div>
+        </div>
+
+        <div class="Content-wrapper">
+          <div class="Sidebar">
+            <div class="Menu">
+              
+                <div class="item">
+                  <a href="#introduction">Introduction</a>
+                </div>
+              
+                <div class="item">
+                  <a href="#quick_start">Quick Start</a>
+                </div>
+              
+                <div class="item">
+                  <a href="#environment_variables">Environment Variables</a>
+                </div>
+              
+                <div class="item">
+                  <a href="#links">Links</a>
+                </div>
+              
+            </div>
+          </div>
+
+          <div class="Content">
+            
+              <div class="Page" id="introduction">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction__introduction" href="#introduction__introduction">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Introduction</h1>
+                <p><a href="https://github.com/nem-toolchain/nem-toolchain">Nem-toolchain</a> is a command-line toolchain for <a href="https://nem.io">NEM</a> blockain.</p>
+
+              </div>
+            
+              <div class="Page" id="quick_start">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="quick_start__quick_start" href="#quick_start__quick_start">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Quick Start</h1>
+                <p>To try nem-toolchain simply run this command in your console:</p>
+
+<pre><code>$ curl -sL https://git.io/getnem | bash
+</code></pre>
+
+<p>Run <code>-h</code> for help menu:</p>
+
+<pre><code>$ ./bin/nem -h
+NAME:
+nem - command-line toolchain for NEM blockchain
+
+USAGE:
+nem [global options] command [command options] [arguments...]
+
+VERSION:
+v0.2.0 (47745ad / 2017-10-03T16:39:10+0300)
+
+COMMANDS:
+account  Account related bundle of actions
+help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+--chain CHAIN  chain id from CHAIN: [mainnet|mijin|testnet] (default: &#34;mainnet&#34;) [$NEM_CHAIN, $CHAIN]
+--help, -h     show help
+--version, -v  print the version
+</code></pre>
+
+              </div>
+            
+              <div class="Page" id="environment_variables">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="environment_variables__environment_variables" href="#environment_variables__environment_variables">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Environment Variables</h1>
+                <p>Nem-toolchain can use environment variable <code>NEM_CHAIN</code> to specify chain id,</p>
+
+<pre><code>$ NEM_CHAIN=testnet nem account generate
+</code></pre>
+
+<p>or same with <code>CHAIN</code> variable:</p>
+
+<pre><code>$ CHAIN=testnet nem account generate
+</code></pre>
+
+              </div>
+            
+              <div class="Page" id="links">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="links__links" href="#links__links">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Links</h1>
+                <ul>
+<li>Follow the progress on the [GitHub](“<a href="https://github.com/nem-toolchain/nem-toolchain&#34;">https://github.com/nem-toolchain/nem-toolchain&#34;</a>) repository</li>
+<li>[Gitter](“<a href="https://gitter.im/nem-toolchain/Lobby&#34;">https://gitter.im/nem-toolchain/Lobby&#34;</a>) to chat about Nem-toolchain, questions, etc</li>
+</ul>
+
+              </div>
+            
+            <div class="Footer"></div>
+            <script src="theme/apex/js/smoothscroll.js"></script>
+            <script src="theme/apex/js/index.js"></script>
+          </div>
+        </div>
+    </div>
+  
+
+</div></body></html>
