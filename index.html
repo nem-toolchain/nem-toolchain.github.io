@@ -2,7 +2,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Nem-toolchain | Command line toolchain for NEM blockchain</title>
+    <title>nem-toolchain | Command line toolchain for NEM blockchain</title>
     <link rel="stylesheet" href="theme/apex/css/index.css"/>
   </head>
   <body>
@@ -10,7 +10,7 @@
       <div class="Container">
         <div class="Header">
           <div class="Title center">
-            <span class="text">Nem-toolchain</span>
+            <span class="text">nem-toolchain</span>
             <span class="subtext">Command line toolchain for NEM blockchain</span>
           </div>
         </div>
@@ -32,11 +32,23 @@
                 </div>
               
                 <div class="item">
+                  <a href="#commands">Commands</a>
+                </div>
+              
+                <div class="item">
+                  <a href="#guides">Guides</a>
+                </div>
+              
+                <div class="item">
+                  <a href="#faq">FAQ</a>
+                </div>
+              
+                <div class="item">
                   <a href="#links">Links</a>
                 </div>
               
                 <div class="item">
-                  <a href="#"></a>
+                  <a href="#donations">Donations</a>
                 </div>
               
             </div>
@@ -48,7 +60,7 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction__introduction" href="#introduction__introduction">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Introduction</h1>
-                <p><a href="https://github.com/nem-toolchain/nem-toolchain">Nem-toolchain</a> is a command-line toolchain for <a href="https://nem.io">NEM</a> blockain.</p>
+                <p><code>nem-toolchain</code> is a command-line toolchain for <a href="https://nem.io">NEM blockchain</a>.</p>
 
               </div>
             
@@ -56,31 +68,28 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="quick_start__quick_start" href="#quick_start__quick_start">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Quick Start</h1>
-                <p>To try nem-toolchain simply run this command in your console:</p>
+                <p><code>nem-toolchain</code> is distributed in a binary form and can be installed manually via the
+<a href="https://github.com/nem-toolchain/nem-toolchain/releases/latest">tarball releases</a>
+or one of the options below.</p>
 
-<pre><code>$ curl -sL https://git.io/getnem | bash
+<p>The quickest way to get <code>nem</code> is to run the following command, which installs to the local <code>bin</code> by default.</p>
+
+<pre><code class="language-console">$ curl -sL https://git.io/getnem | bash
 </code></pre>
 
-<p>Run <code>-h</code> for help menu:</p>
+<p>Or, if you want to lock at specific version:</p>
 
-<pre><code>$ ./bin/nem -h
-NAME:
-nem - command-line toolchain for NEM blockchain
+<pre><code class="language-console">$ curl -sL https://git.io/getnem | VERSION=vX.Y.Z bash
+</code></pre>
 
-USAGE:
-nem [global options] command [command options] [arguments...]
+<p>Verify installation with:</p>
 
-VERSION:
-v0.2.0 (47745ad / 2017-10-03T16:39:10+0300)
+<pre><code>$ bin/nem -v
+</code></pre>
 
-COMMANDS:
-account  Account related bundle of actions
-help, h  Shows a list of commands or help for one command
+<p>You can include the <code>bin</code> directory in your <code>PATH</code> to simplify further usage:</p>
 
-GLOBAL OPTIONS:
---chain CHAIN  chain id from CHAIN: [mainnet|mijin|testnet] (default: &#34;mainnet&#34;) [$NEM_CHAIN, $CHAIN]
---help, -h     show help
---version, -v  print the version
+<pre><code class="language-console">export PATH=$PATH:./bin
 </code></pre>
 
               </div>
@@ -89,15 +98,137 @@ GLOBAL OPTIONS:
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="environment_variables__environment_variables" href="#environment_variables__environment_variables">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Environment Variables</h1>
-                <p>Nem-toolchain can use environment variable <code>NEM_CHAIN</code> to specify chain id,</p>
+                <p><code>nem-toolchain</code> can use environment variable <code>NEM_CHAIN</code> to know about used chain by default:</p>
 
-<pre><code>$ NEM_CHAIN=testnet nem account generate
+<pre><code class="language-console">$ export NEM_CHAIN=testnet
 </code></pre>
 
-<p>or same with <code>CHAIN</code> variable:</p>
+<p>There is also the shorter alternative for <code>NEM_CHAIN</code> - <code>CHAIN</code>.</p>
 
-<pre><code>$ CHAIN=testnet nem account generate
+              </div>
+            
+              <div class="Page" id="commands">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="commands__commands" href="#commands__commands">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Commands</h1>
+                <p>To view details for a <code>nem</code> command at any time use <code>nem help</code> or <code>nem help &lt;command&gt;</code>.</p>
+
+<pre><code>NAME:
+   nem - command-line toolchain for NEM blockchain
+
+USAGE:
+   nem [global options] command [command options] [arguments...]
+
+VERSION:
+   snapshot (9ea1a55 / 2017-10-05T01:34:13+0200)
+
+COMMANDS:
+     account  Account related bundle of actions
+     help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --chain CHAIN  chain id from CHAIN: [mainnet|mijin|testnet] (default: &#34;mainnet&#34;) [%NEM_CHAIN%, %CHAIN%]
+   --help, -h     show help
+   --version, -v  print the version
 </code></pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands__account" href="#commands__account">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Account</h2>
+
+<p>Account related bundle of actions.</p>
+
+<pre><code>NAME:
+   nem account - Account related bundle of actions
+
+USAGE:
+   nem account command [command options] [arguments...]
+
+COMMANDS:
+     generate  Generate a new account
+     vanity    Find vanity address by a given list of prefixes
+
+OPTIONS:
+   --help, -h  show help
+</code></pre>
+
+              </div>
+            
+              <div class="Page" id="guides">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="guides__guides" href="#guides__guides">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Guides</h1>
+                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides__new_accounts" href="#guides__new_accounts">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>New accounts</h2>
+
+<p>How to create a new account for testnet:</p>
+
+<pre><code class="language-console">$ nem --chain testnet account generate
+Address: TBYLAB-4RILJG-ZAUH65-YVTRDO-VH52P4-ZDPDO3-SWHS
+Public key: bda2ddf2cdb65267aad0032435c5669f4391f02c681aed62b06762ddda97f1c1
+Private key: 7d77192b3cc6f3770ffae4f7a85f3c40bca1256abfa1e59a3cf57cefd260af80
+</code></pre>
+
+<p>Instead of option you can specify the desired network via environment variables:</p>
+
+<pre><code class="language-console">$ NEM_CHAIN=testnet nem account generate
+...
+</code></pre>
+
+<p>How to create multiple accounts:</p>
+
+<pre><code class="language-console">$ nem --chain testnet account generate -n 2
+Address: NAU6YK-24PNZX-ADXUPG-56BXUV-II4XYO-52JXAN-47UV
+Public key: aef0136c2b99a08475ad8ec3b4bb56410d034f02053674531514501d3f6975fc
+Private key: ddd749e79a22d6a79fd551cbedcf99a5160f8dd5984445daccb1a1fbf9b77ea6
+
+Address: NAQZWC-ZUDCZ5-4IRKJN-WXJ76C-HLFSP5-RWYCXN-XJCZ
+Public key: 77717697183da6fa770400c8b7187cc7bdeb098dcd6c539f0d7c08d822cb44c8
+Private key: fdd38df995c7fbb7b3de12613a5578f26bbe625333b538401dac4c24bab8b6f5
+</code></pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides__vanity_addresses" href="#guides__vanity_addresses">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Vanity addresses</h2>
+
+<p>How to find vanity address with predefined prefix <code>TCGQQK</code> for testnet:</p>
+
+<pre><code class="language-console">$ nem --chain testnet account vanity TCGQQK
+Address: TCGQQK-N5HED6-6OQ67Z-2F7GGW-Z66DWV-BFJUW6-F5WC
+Public key: c342dbf7cdd3096c4c3910c511a57049e62847dd5030c7e644bc855acc1fd626
+Private key: 4e017065d62f10223b989ff3f75a845fbe3df73d6c0e6d67cc4c59bea3213002
+</code></pre>
+
+<p>If you would like to search for multiple prefixes at the same time and without digits at all:</p>
+
+<pre><code class="language-console">$ nem --chain testnet account vanity --no-digits TABC TACB TBAC TBCA TCAB TCBA
+Address: TACBLF-CJBFVE-TPTUIP-HBIRVI-PHQKKD-OSJMOF-KGNU
+Public key: 8a68fdf463b4531f409369ffe368f9d78eb5e0b713459b767fbb4c4bfd148667
+Private key: ae4e943300554508d52c863329a53e40787e994e7c2733d54c378fb88421d387
+</code></pre>
+
+<p>Important notes:</p>
+
+<ol>
+<li>Mainnet addresses start with <code>N</code>, Mijin - with <code>M</code>, Testnet - with <code>T</code>.</li>
+<li>Second symbols are <code>A</code>, <code>B</code>, <code>C</code>, or <code>D</code> only, so for mainnet you wonâ€™t find addresses that start with <code>NE</code> or <code>N4</code>.</li>
+<li>The digits <code>0</code>, <code>1</code>, <code>8</code> and <code>9</code> are not part of <a href="https://en.wikipedia.org/wiki/Base32">Base32 encoding</a> and therefore will not appear in any address.</li>
+</ol>
+
+              </div>
+            
+              <div class="Page" id="faq">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="faq__faq" href="#faq__faq">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>FAQ</h1>
+                <p>If you have general questions about <a href="https://nem.io">NEM blockchain</a>, please take a look at
+<a href="https://blog.nem.io/faq-en/">official FAQs</a>.</p>
+
+<p></p><details>
+  <summary>Where can I download official client?</summary>
+  <p>NEM Nano Wallet <a href="https://nem.io/downloads/">here</a>.</p>
+</details><p></p>
 
               </div>
             
@@ -106,18 +237,17 @@ GLOBAL OPTIONS:
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Links</h1>
                 <ul>
-<li>Follow the progress on the [GitHub](â€œ<a href="https://github.com/nem-toolchain/nem-toolchain&#34;">https://github.com/nem-toolchain/nem-toolchain&#34;</a>) repository</li>
-<li>[Gitter](â€œ<a href="https://gitter.im/nem-toolchain/Lobby&#34;">https://gitter.im/nem-toolchain/Lobby&#34;</a>) to chat about Nem-toolchain, questions, etc</li>
+<li>Follow the progress on <a href="https://github.com/nem-toolchain/nem-toolchain">GitHub repository</a></li>
+<li><a href="https://gitter.im/nem-toolchain/Lobby">Gitter</a> to chat with the project community members</li>
 </ul>
 
               </div>
             
-              <div class="Page" id="">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="__" href="#__">
+              <div class="Page" id="donations">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="donations__donations" href="#donations__donations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a></h1>
-                <p> h(  ÃÃ’Øúÿ“Öúÿšİüÿ‹ËéÿŒÕûÿ‹ÒúÿØüÿ“Òïÿ’Ññÿ™Üüÿ‡Ò÷ÿ„ÓùÿƒÈêÿ™Ûüÿ“×úÿ”×üÿ‘Öùÿ•ÛÿÿŠÊåÿyxÿƒÊëÿ×şÿ‰Öÿÿ|¨–ÿ…³¬ÿ™ßÿÿ‡×ÿÿv½ÙÿvœzÿÓõÿ”Úüÿ”×ûÿ”ÚüÿĞóÿ—¥0ÿºÄÿp†Qÿ‡Õÿÿ†­ÿ¸¾ÿ‘
-ÿ|¯Ìÿ†Îëÿœ¦ÿµÀÿpŠkÿ“Ùÿÿ•ØúÿÊíÿ^™®ÿ0Šnÿu…*ÿÍ›Gÿ|˜§ÿ1ˆŠÿL‰Hÿ³â€™ÿ°ŸƒÿCŠ¡ÿ6Œiÿ…%ÿÉ˜Mÿ‚­Àÿ†ÈìÿÚùÿ=“¿ÿœÿÿP}”ÿşªMÿrwiÿ–ñÿŠİÿÎ•WÿÈ”Rÿw­ÿ¢ÿÿm„‡ÿô Bÿ‰¢¥ÿ’Şÿÿ”Úüÿ¿ßÿM¡Èÿ?Œ­ÿx”™ÿ~»Ùÿ^©Íÿ9–Àÿaˆ‘ÿ²¾ÿo¶Úÿ;™Ğÿ3u•ÿ…§ÿ‹Èæÿ•Úÿÿ“Úüÿšßÿÿ¥âÿÿ”Íçÿ‰İÿÿİşÿ—ßÿÿ¡ÚîÿšŞóÿ›äÿÿÜÿÿ’²rÿ ¬ÿx´¼ÿ™âÿÿ•ØúÿŠËëÿ‰ÉêÿŒËìÿ€º×ÿ‚Åéÿ‚ÅèÿˆĞõÿk˜°ÿm—«ÿ˜Ûÿÿi©ÿ}• ÿ¡­ÿ’?ÿ†ÀãÿŒÍïÿ‹ÍíÿŒÍïÿÏïÿƒ½ÛÿƒÉğÿ„Éíÿ‰Ñöÿw¦¾ÿv¨¾ÿœÖôÿ+ˆµÿ•òÿqwdÿÿ¯Sÿ†¡¤ÿ‹Ôıÿ”Úûÿ”Úıÿ™ÜşÿŒÈèÿŒÕıÿÖüÿÚşÿ—×ïÿ–Øóÿ ŞıÿDšÃÿ•ŞÿA”ÿ®‰Wÿˆ³Äÿ–ßÿÿ’Øùÿ”Øüÿ—Úüÿ‹ÇåÿŠÓûÿÕúÿ‡Õÿÿ~£{ÿ„¬’ÿ–ŞÿÿÖöÿ~Áåÿn®Òÿ„Íôÿ“Ûşÿ”×ûÿ‘Õ÷ÿ’Öùÿ–ØúÿˆÅãÿŠÑõÿ‹×ÿÿ¤}ÿºÀÿ“œÿ|¦¼ÿ‹ÚÿÿÏùÿ…ÅçÿšÛüÿ’Ô÷ÿ“Öúÿ„Åãÿ†Ååÿ‹Çæÿ´Ñÿ€Åèÿv±Óÿ%†•ÿ8ƒcÿ½2ÿ³œwÿqºàÿw¾ãÿu°ĞÿŠÆäÿ†Ääÿ‡Åæÿ’Ùúÿ”Ùüÿ™ÛıÿŒÆåÿ‘Ûÿÿs´ÕÿâÿäÿÄ‘Tÿ¼“YÿxÂæÿ†ÖÿÿƒÃäÿ˜Ûüÿ•Ùüÿ•Ùıÿ‘×ùÿ“×úÿ—Ùûÿ‰ÆåÿŠÓüÿ‹Ğ÷ÿl°ÒÿKÅÿc’¤ÿ‹»Ïÿ…Óúÿ‚Ïùÿ‚Ãäÿ—Ùûÿ“Öúÿ”×ûÿ“×ùÿ“Øûÿ—Úûÿ‰ÅåÿŠÓûÿŠÕûÿ–ßÿÿ›Óîÿ–ØóÿšâÿÿˆÔúÿ‚Ğúÿ‚Ãäÿ–Ùûÿ“Öúÿ•Øüÿ</p>
+</a>Donations</h1>
+                <p>Our NEM address: <code>NDONAT-PNSHRX-WNXOWC-FLAUAT-CSOCGR-WJZDBE-ZOVT</code></p>
 
               </div>
             
