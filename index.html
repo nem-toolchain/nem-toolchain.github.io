@@ -62,6 +62,17 @@
 </a>Introduction</h1>
                 <p><code>nem-toolchain</code> is a command-line toolchain for <a href="https://nem.io">NEM blockchain</a>.</p>
 
+<p>Main features:</p>
+
+<ul>
+<li>Generate new accounts for <code>Mijin</code>, <code>mainnet</code>, <code>testnet</code></li>
+<li>Find vanity address by a given list of prefixes</li>
+</ul>
+
+<p>Quick demo:</p>
+
+<p><a href="https://asciinema.org/a/OIt7zwfMmJep5LX94KwwPv9Et"><img src="https://asciinema.org/a/OIt7zwfMmJep5LX94KwwPv9Et.png" alt="asciicast"/></a></p>
+
               </div>
             
               <div class="Page" id="quick_start">
@@ -120,14 +131,14 @@ USAGE:
    nem [global options] command [command options] [arguments...]
 
 VERSION:
-   snapshot (9ea1a55 / 2017-10-05T01:34:13+0200)
+   0.2.0 (5d14f67a97402e9c0e2565071106ca41dbff6a6f / 2017-10-05T11:01:08Z)
 
 COMMANDS:
      account  Account related bundle of actions
      help, h  Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --chain CHAIN  chain id from CHAIN: [mainnet|mijin|testnet] (default: &#34;mainnet&#34;) [%NEM_CHAIN%, %CHAIN%]
+   --chain CHAIN  chain id from CHAIN: [mainnet|mijin|testnet] (default: &#34;mainnet&#34;) [$NEM_CHAIN, $CHAIN]
    --help, -h     show help
    --version, -v  print the version
 </code></pre>
@@ -162,7 +173,7 @@ OPTIONS:
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>New accounts</h2>
 
-<p>How to create a new account for testnet:</p>
+<p>How to create a new account for <code>testnet</code>:</p>
 
 <pre><code class="language-console">$ nem --chain testnet account generate
 Address: TBYLAB-4RILJG-ZAUH65-YVTRDO-VH52P4-ZDPDO3-SWHS
@@ -192,9 +203,9 @@ Private key: fdd38df995c7fbb7b3de12613a5578f26bbe625333b538401dac4c24bab8b6f5
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Vanity address</h2>
 
-<p>How to find vanity address with predefined prefix <code>TCGQQK</code> for testnet:</p>
+<p>How to find vanity address with predefined prefix <code>TCGQQK</code> for <code>testnet</code>:</p>
 
-<pre><code class="language-console">$ nem --chain testnet account vanity TCGQQK
+<pre><code class="language-console">$ nem --chain testnet account vanity --skip-estimate TCGQQK
 Address: TCGQQK-N5HED6-6OQ67Z-2F7GGW-Z66DWV-BFJUW6-F5WC
 Public key: c342dbf7cdd3096c4c3910c511a57049e62847dd5030c7e644bc855acc1fd626
 Private key: 4e017065d62f10223b989ff3f75a845fbe3df73d6c0e6d67cc4c59bea3213002
@@ -202,11 +213,14 @@ Private key: 4e017065d62f10223b989ff3f75a845fbe3df73d6c0e6d67cc4c59bea3213002
 
 <p>If you would like to search for multiple prefixes at the same time and without digits at all:</p>
 
-<pre><code class="language-console">$ nem --chain testnet account vanity --no-digits TABC TACB TBAC TBCA TCAB TCBA
+<pre><code class="language-console">$ nem --chain testnet account vanity --show-complexity --no-digits TABC TACB TBAC TBCA TCAB TCBA
 Address: TACBLF-CJBFVE-TPTUIP-HBIRVI-PHQKKD-OSJMOF-KGNU
 Public key: 8a68fdf463b4531f409369ffe368f9d78eb5e0b713459b767fbb4c4bfd148667
 Private key: ae4e943300554508d52c863329a53e40787e994e7c2733d54c378fb88421d387
 </code></pre>
+
+<p>As you can see from the last output, <code>nem-toolchain</code> can show specified search complexity
+and calculates estimate times for three predefined accuracies - <code>50%</code>, <code>80%</code> and <code>99.9%</code>.</p>
 
 <p>Important notes:</p>
 
