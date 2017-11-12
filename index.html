@@ -57,7 +57,7 @@
           <div class="Content">
             
               <div class="Page" id="introduction">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction__introduction" href="#introduction__introduction">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction" href="#introduction">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Introduction</h1>
                 <p><code>nem-toolchain</code> is a command-line toolchain for <a href="https://nem.io">NEM blockchain</a>.</p>
@@ -66,24 +66,26 @@
 
 <ul>
 <li>Generate new accounts for <code>mijin</code>, <code>mainnet</code>, <code>testnet</code>.</li>
+<li>Show accounts details for any given private key.</li>
 <li>Find vanity address by a given list of prefixes.</li>
 </ul>
 
 <p>Quick demo:</p>
 
-<script type="text/javascript" src="https://asciinema.org/a/140958.js" id="asciicast-140958" data-speed="3" async=""></script>
+<script type="text/javascript" src="https://asciinema.org/a/147103.js" id="asciicast-147103" async=""></script>
 
               </div>
             
               <div class="Page" id="quick_start">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="quick_start__quick_start" href="#quick_start__quick_start">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="quick_start" href="#quick_start">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Quick Start</h1>
                 <p><code>nem-toolchain</code> is distributed in a binary form and can be installed manually via the
 <a href="https://github.com/nem-toolchain/nem-toolchain/releases/latest">tarball releases</a>
 or one of the options below.</p>
 
-<p>The quickest way to get <code>nem</code> is to run the following command, which installs to the local <code>bin</code> by default.</p>
+<p>The quickest way to get <code>nem</code> is to run the following command, which installs to the
+local <code>bin</code> by default.</p>
 
 <pre><code class="language-console">$ curl -sL https://git.io/getnem | bash
 </code></pre>
@@ -106,7 +108,7 @@ or one of the options below.</p>
               </div>
             
               <div class="Page" id="environment_variables">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="environment_variables__environment_variables" href="#environment_variables__environment_variables">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="environment_variables" href="#environment_variables">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Environment Variables</h1>
                 <p><code>nem-toolchain</code> can use environment variable <code>NEM_CHAIN</code> to know about used chain by default:</p>
@@ -119,7 +121,7 @@ or one of the options below.</p>
               </div>
             
               <div class="Page" id="commands">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="commands__commands" href="#commands__commands">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="commands" href="#commands">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Commands</h1>
                 <p>To view details for a <code>nem</code> command at any time use <code>nem help</code> or <code>nem help &lt;command&gt;</code>.</p>
@@ -143,7 +145,7 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 </code></pre>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands__account" href="#commands__account">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands.account" href="#commands.account">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Account</h2>
 
@@ -157,6 +159,7 @@ USAGE:
 
 COMMANDS:
      generate  Generate a new account
+     info      Show info for given account
      vanity    Find vanity address by a given list of prefixes
 
 OPTIONS:
@@ -166,10 +169,10 @@ OPTIONS:
               </div>
             
               <div class="Page" id="guides">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="guides__guides" href="#guides__guides">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="guides" href="#guides">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Guides</h1>
-                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides__new_accounts" href="#guides__new_accounts">
+                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides.new_accounts" href="#guides.new_accounts">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>New accounts</h2>
 
@@ -187,19 +190,31 @@ Private key: 7d77192b3cc6f3770ffae4f7a85f3c40bca1256abfa1e59a3cf57cefd260af80
 ...
 </code></pre>
 
-<p>How to create multiple accounts:</p>
+<p>How to create multiple accounts and strip the output to private keys only:</p>
 
-<pre><code class="language-console">$ nem --chain testnet account generate -n 2
-Address: TCH3WQ-DRDTOH-SAJK3C-ZJ6FT4-JT6INP-PAOUV2-K5LA
-Public key: 208773e61dc7c53cc055af6ec1d5daad84912da80218db1fe2a26ad30ec459cc
-Private key: 0ab24e580e14f0ac9a79c27f00c1ab6081ddc72adedd305476b4e695a4d3e3d7
-----
-Address: TDQJOD-DIBV7Q-6DATIR-IRLPNV-TK5XUT-2XD3Z6-HBEP
-Public key: 9cb76dbcdeac1e2cc4ab8ae56ea8545cacac781dc333f334b0604cee70d59153
-Private key: 3caf6c68dbda89f3c760261d76f83d75bf440509f8615395071f11721e498f3e
+<pre><code class="language-console">$ nem --chain testnet account generate -n 2 --strip
+0ab24e580e14f0ac9a79c27f00c1ab6081ddc72adedd305476b4e695a4d3e3d7
+3caf6c68dbda89f3c760261d76f83d75bf440509f8615395071f11721e498f3e
 </code></pre>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides__vanity_address" href="#guides__vanity_address">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides.accounts_info" href="#guides.accounts_info">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Accounts info</h2>
+
+<p>How to show account details by given zero private key for <code>testnet</code>:</p>
+
+<pre><code class="language-console">$ echo &#34;0000000000000000000000000000000000000000000000000000000000000000&#34; |\
+    nem --chain testnet account info
+----
+Address: TBONKW-COWBZY-ZB2I5J-D3LSDB-QVBYHB-757VN3-SKPP
+Public key: 462ee976890916e54fa825d26bdd0235f5eb5b6a143c199ab0ae5ee9328e08ce
+Private key: 0000000000000000000000000000000000000000000000000000000000000000
+</code></pre>
+
+<p>You can also constraint the command output to show only public key (<code>--public</code>)
+or public address (<code>--address</code>).</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="guides.vanity_address" href="#guides.vanity_address">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Vanity address</h2>
 
@@ -220,11 +235,11 @@ Public key: bb326c920bb5b42d5d99df602bb82fdcdd922911ef3b46e73af654babba43698
 Private key: 2d9a61cee0a3b210c2cde438b7f620931049320fd8dffbda04e28e9dd0fbfdef
 </code></pre>
 
-<p>Or you can go further and customize excluded characters:</p>
+<p>Or you can go further and customize excluded characters and define prefixes
+with the help of brace expansion mechanism:</p>
 
-<pre><code class="language-console">&gt; nem-snapshot --chain testnet account vanity --show-complexity --exclude 246 TABC TACB TBAC TBCA TCAB TCBA
+<pre><code class="language-console">&gt; nem --chain testnet account vanity --exclude 246 _{ABC,ACB,BAC,BCA,CAB,CBA}
 Calculate accounts rate... 18475 accounts/sec
-Specified search complexity: 23620
 Estimate search times: 0s (50%), 2s (80%), 5s (99.9%)
 ----
 Address: TACBF3-5NBHOJ-75H3EL-QUJ3VZ-W3X73L-3BGENR-7YE5
@@ -239,14 +254,16 @@ and calculates estimate times for three predefined accuracies: <code>50%</code>,
 
 <ol>
 <li>Mainnet addresses start with <code>N</code>, Mijin - with <code>M</code>, Testnet - with <code>T</code>.</li>
-<li>Second symbols are <code>A</code>, <code>B</code>, <code>C</code>, or <code>D</code> only, so for mainnet you won’t find addresses that start with <code>NE</code> or <code>N4</code>.</li>
-<li>The digits <code>0</code>, <code>1</code>, <code>8</code> and <code>9</code> are not part of <a href="https://en.wikipedia.org/wiki/Base32">Base32 encoding</a> and therefore will not appear in any address.</li>
+<li>Second symbols are <code>A</code>, <code>B</code>, <code>C</code>, or <code>D</code> only, so for mainnet you won’t find addresses
+that start with <code>NE</code> or <code>N4</code>.</li>
+<li>The digits <code>0</code>, <code>1</code>, <code>8</code> and <code>9</code> are not part of
+<a href="https://en.wikipedia.org/wiki/Base32">Base32 encoding</a> and will not appear in any address.</li>
 </ol>
 
               </div>
             
               <div class="Page" id="faq">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="faq__faq" href="#faq__faq">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="faq" href="#faq">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>FAQ</h1>
                 <p>If you have general questions about <a href="https://nem.io">NEM blockchain</a>, please take a look at
@@ -260,7 +277,7 @@ and calculates estimate times for three predefined accuracies: <code>50%</code>,
               </div>
             
               <div class="Page" id="links">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="links__links" href="#links__links">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="links" href="#links">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Links</h1>
                 <ul>
@@ -271,10 +288,11 @@ and calculates estimate times for three predefined accuracies: <code>50%</code>,
               </div>
             
               <div class="Page" id="donations">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="donations__donations" href="#donations__donations">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="donations" href="#donations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Donations</h1>
-                <p>Our NEM address: <code>NCSY3D-EVBGVX-MEPZWK-TIJWCA-OXL5NE-OLJPHX-LFLD</code></p>
+                <p>Our NEM address:
+<a href="http://chain.nem.ninja/#/account/NCSY3D-EVBGVX-MEPZWK-TIJWCA-OXL5NE-OLJPHX-LFLD"><code>NCSY3D-EVBGVX-MEPZWK-TIJWCA-OXL5NE-OLJPHX-LFLD</code></a></p>
 
               </div>
             
